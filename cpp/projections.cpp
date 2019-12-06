@@ -9,8 +9,8 @@
 #include <memory.h>
 
 extern "C" {
-    void glm_ortho(float *dst) {
-        glm::mat4 ortho = glm::ortho(0.0f, 1024.0f, 768.0f, 0.0f, 0.1f, 1000.0f);
+    void glm_ortho(float a, float b, float c, float d, float e, float f, float *dst) {
+        glm::mat4 ortho = glm::ortho(a, b, c, d, e, f);
         std::cout << glm::to_string(ortho) << std::endl;
 
         memcpy(dst, glm::value_ptr(ortho), sizeof(glm::mat4));
